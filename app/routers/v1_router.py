@@ -11,8 +11,7 @@ from typing import List
 import json
 from app.services.jira_issues import pull_jira_issue
 from app.services.get_jira_answer import get_answer
-from app.services.user_stats import get_user_stats
-
+from app.services.user_stats import get_user_stats, get_per_user_ticket_assign
 
 logger = synechron_logger.SyneLogger(
     synechron_logger.get_logger(__name__), {"model_inference": "v1"}
@@ -46,4 +45,7 @@ def pull_data(input: datamodels.GetAnswer):
 def get_user_stat():
     return get_user_stats()
 
+@router.get("/get_per_user_stats")
+def get_user_stat():
+    return get_per_user_ticket_assign()
 

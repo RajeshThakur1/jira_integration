@@ -1,3 +1,7 @@
-,"Award Type(A, A+, A++)",Month,Emp id,Employee Name,Team/Project Name,Synopsis
-0,A+,Jan,Dummy,Test Data,ABC Project,Test data's  invaluable contributions to the success of all major release for Dummy is truly commendable. Test demonstrates exceptional diligence and willigness to go above and beyond to ensure timely delivery. 
-1,A++,Feb,Dummy1 ,Test Data1,XYZ Project,Test data1's  invaluable contributions to the success of all major release for Dummy is truly commendable. Test demonstrates exceptional diligence and willigness to go above and beyond to ensure timely delivery. 
+﻿"Award Type(Star, Surpass)",Month,Emp id,Employee Name,Team/Project Name,Willingness to work in odd hours(1-5),Adhoc task(1-5),Efforts(%),Synopsis
+Star,Jan,345,Rajesh Kumar,innovation,5,5,100,Rajesh's  invaluable contributions to the success of all major release for innovation is truly commendable. Rajesh demonstrates exceptional diligence and willigness to go above and beyond to ensure timely delivery. 
+Star,Feb,134,Sachin Gujar,innovation,4,5,95,Sachin's  invaluable contributions to the success of all major release for innovation is truly commendable. Rajesh demonstrates exceptional diligence and willigness to go above and beyond to ensure timely delivery. 
+Surpass,Feb,345,Rajesh Kumar,innovation,5,5,95,
+Surpass,Feb,234,Sampada Korde,innovation,3,,95,
+STAR,July,345,Rajesh Kumar,innovation,5,5,95,
+Star,Feb,134,Sachin Gujar,innovation,4,5,95,

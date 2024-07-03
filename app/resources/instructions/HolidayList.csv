@@ -1,2 +1,10 @@
-,Client Holiday,Day observed,Location,Country,Category,Synechron,Day observed.1,Location.1,Country.1,Category\
-0,New Year's Day,"Monday, January 1, 2024",USA,USA,PH,New Year's Day,"Monday, January 1, 2024",USA,USA,optional
+Client Holiday,Day observed,Location,Country,Category,Synechron,Day observed,Location,Country,Category\
+New Year's Day,"Monday, January 1, 2024",USA,USA,PH,New Year's Day,"Monday, January 1, 2024",USA,USA,optional
+Holi,Mar-15,India,India,PH,Holi,Mar-15,India,India,optional
+Good Friday,Apr-07,USA,USA,PH,Good Friday,Apr-07,USA,USA,optional
+Eid,May-10,India,India,PH,Eid,May-10,India,India,optional
+Parsi new year,Jul-01,India,India,Optional,Parse New Year,Jul-01,India,India,optional
+US day,Jul-04,USA,USA,PH,US day,Jul-04,USA,USA,PH
+Ganesh Chturti,Sep-20,India,India,PH,Ganesh Chaturti,Sep-20,India,India,PH
+Diwali,Nov-10,India,India,PH,Diwali,Nov-10,India,India,PH
+Christmas ,Dec-25,USA,USA,PH,Christmas,Dec-25,USA,USA,PH
