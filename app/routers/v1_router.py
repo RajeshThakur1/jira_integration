@@ -11,7 +11,7 @@ from typing import List
 import json
 from app.services.jira_issues import pull_jira_issue
 from app.services.get_jira_answer import get_answer
-from app.services.user_stats import get_user_stats, get_per_user_ticket_assign
+from app.services.user_stats import get_user_stats, get_per_user_ticket_assign, get_reward_graph
 
 logger = synechron_logger.SyneLogger(
     synechron_logger.get_logger(__name__), {"model_inference": "v1"}
@@ -49,3 +49,6 @@ def get_user_stat():
 def get_user_stat():
     return get_per_user_ticket_assign()
 
+@router.get("/get_reward_graph")
+def get_user_stat():
+    return get_reward_graph()
