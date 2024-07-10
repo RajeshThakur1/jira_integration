@@ -76,6 +76,7 @@ def pull_jira_issue(jira_user, project_key):
 
         else:
             # Insert new issue
+            print(issue.fields.status.name)
             issue_data = {
                 "Issue Key": issue.key,
                 "Summary": issue.fields.summary,
