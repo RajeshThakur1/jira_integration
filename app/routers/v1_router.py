@@ -36,7 +36,7 @@ def pull_data(input: datamodels.JiraIssues):
     project_key = input.project_key
     return pull_jira_issue(jira_user_email,project_key)
 
-@router.post("/pull_data_from_jira_new")
+@router.get("/pull_data_from_jira_new")
 def pull_data(input: datamodels.JiraIssues):
     jira_user_email = input.jira_user_email
     project_key = input.project_key
