@@ -16,6 +16,47 @@ from crewai_tools import ScrapeWebsiteTool, SerperDevTool, DirectoryReadTool, Fi
 search_tool = SerperDevTool()
 scrape_tool = ScrapeWebsiteTool()
 
+
+def pull_jira_issue_json(jira_user, project_key):
+    jira_url = cfg.jira_url
+    jira_api_token = cfg.jira_api_token
+
+    jira = JIRA(jira_url, basic_auth=(jira_user, jira_api_token), options={'server': jira_url, 'verify': False})
+    project_key = project_key
+    issues = jira.search_issues(f'project={project_key}')
+
+    all_issues_data = []
+
+    # Iterate over each issue
+    for issue in issues:
+        issue_comments = []
+        for comment in issue.fields.comment.comments:
+            issue_comments.append({
+                "Author": comment.author.displayName,
+                "Created": comment.created,
+                "Comment": comment.body
+            })
+
+        issue_data = {
+            "Issue Key": issue.key,
+            "Summary": issue.fields.summary,
+            "Description": issue.fields.description,
+            "Status": issue.fields.status.name,
+            "Priority": issue.fields.priority.name,
+            "Created Date": issue.fields.created,
+            "Due Date": issue.fields.duedate,
+            "Assignee": issue.fields.assignee.displayName if issue.fields.assignee else 'Unassigned',
+            "Comments": issue_comments
+        }
+        all_issues_data.append(issue_data)
+        print(f"Issue {issue.key} processed.")
+
+    # Convert the data to JSON format
+    json_data = json.dumps(all_issues_data, indent=2, default=str)
+
+    return json_data
+
+
 def pull_jira_issue(jira_user, project_key):
     mongo_url = cfg.mongo_url
     mongo_db_name = cfg.mongo_db_name

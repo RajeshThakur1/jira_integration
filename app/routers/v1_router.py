@@ -9,7 +9,7 @@ from fastapi.responses import JSONResponse
 from fastapi.responses import StreamingResponse
 from typing import List
 import json
-from app.services.jira_issues import pull_jira_issue
+from app.services.jira_issues import pull_jira_issue, pull_jira_issue_json
 from app.services.get_jira_answer import get_answer
 from app.services.user_stats import get_user_stats, get_per_user_ticket_assign, get_reward_graph
 
@@ -35,6 +35,12 @@ def pull_data(input: datamodels.JiraIssues):
     jira_user_email = input.jira_user_email
     project_key = input.project_key
     return pull_jira_issue(jira_user_email,project_key)
+
+@router.post("/pull_data_from_jira_new")
+def pull_data(input: datamodels.JiraIssues):
+    jira_user_email = input.jira_user_email
+    project_key = input.project_key
+    return pull_jira_issue_json(jira_user_email,project_key)
 
 @router.post("/get_answer")
 def pull_data(input: datamodels.GetAnswer):
