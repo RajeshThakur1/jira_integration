@@ -52,7 +52,8 @@ def pull_jira_issue_json(jira_user, project_key):
         print(f"Issue {issue.key} processed.")
 
     # Convert the data to JSON format
-    json_data = json.dumps(all_issues_data, indent=2, default=str)
+    json_data = all_issues_data
+    # json_data = json.dumps(all_issues_data, indent=2, default=str)
 
     return json_data
 
